@@ -20,10 +20,12 @@ public class Subtracao {
     int respostas;
     
     private void Subtracao(){
-      this.operador1 = ThreadLocalRandom.current().nextInt(0,100);
-      this.operador2 = ThreadLocalRandom.current().nextInt(0,20);
+      
+      this.pontos = 0;
     }
     void CriarPergunta(){
+       this.operador1 = ThreadLocalRandom.current().nextInt(0,100);
+       this.operador2 = ThreadLocalRandom.current().nextInt(0,20);
        String resposta = JOptionPane.showInputDialog("Quanto é " + this.operador1 + "-" + this.operador2 + "?");
        int respostaInt = Integer.parseInt(resposta);
        VerificarResposta(respostaInt);
@@ -41,6 +43,7 @@ public class Subtracao {
     void ExibirResposta(boolean resultado){
         if (resultado == true){
            JOptionPane.showMessageDialog(null,"Acertô mizeravi!");
+           this.pontos += 1;
        }else{
            JOptionPane.showMessageDialog(null,"Erroooooooooou!");
        }
