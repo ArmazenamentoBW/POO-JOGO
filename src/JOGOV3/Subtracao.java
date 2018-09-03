@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JogoV2;
+package JOGOV3;
 
 //import static java.lang.Boolean;
 import java.util.concurrent.ThreadLocalRandom;

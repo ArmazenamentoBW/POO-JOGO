@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JogoV2;
+package JogoV2_old;
 
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
@@ -12,26 +12,25 @@ import javax.swing.JOptionPane;
  *
  * @author 20171BSI0367
  */
-public class Adicao {
+public class Multiplicacao {
     int operador1;
     int operador2;
     int pontos;
     int respostas;
     
-    private void Adicao(){
+    private void Multiplciacao(){
       this.pontos = 0;
     }
-    
     void CriarPergunta(){
-       this.operador1 = ThreadLocalRandom.current().nextInt(0,100);
-       this.operador2 = ThreadLocalRandom.current().nextInt(0,20);
-       String resposta = JOptionPane.showInputDialog("Quanto é " + this.operador1 + "+" + this.operador2 + "?");
+       this.operador1 = ThreadLocalRandom.current().nextInt(0,10);
+       this.operador2 = ThreadLocalRandom.current().nextInt(0,10);
+       String resposta = JOptionPane.showInputDialog("Quanto é " + this.operador1 + "*" + this.operador2 + "?");
        int respostaInt = Integer.parseInt(resposta);
        VerificarResposta(respostaInt);
     }
     
     void VerificarResposta(int valor){
-        if (this.operador1 + this.operador2 == valor){
+        if (this.operador1 * this.operador2 == valor){
             ExibirResposta(true);
             
        }else{
@@ -47,4 +46,5 @@ public class Adicao {
            JOptionPane.showMessageDialog(null,"Erroooooooooou!");
        }
     }
+    
 }

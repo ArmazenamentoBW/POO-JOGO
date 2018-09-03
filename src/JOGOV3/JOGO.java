@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JogoV2;
+package JOGOV3;
 
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author walla
+ * @author 20171BSI0367
  */
-public class JogoV2 {
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class JOGO {
+    
+    public void iniciaJogo(){
         Adicao perguntas_adi = new Adicao();
         Subtracao perguntas_sub = new Subtracao();
         Multiplicacao perguntas_mult = new Multiplicacao();
+        Pontuacao pont = new Pontuacao();
         String resposta;
         int intResposta = 1;
         int operacao;
@@ -27,21 +28,20 @@ public class JogoV2 {
             operacao = ThreadLocalRandom.current().nextInt(0,2);
             switch (operacao) {
                 case 0:
-                    perguntas_adi.CriarPergunta();
+                    perguntas_adi.criarPergunta();
+                    pont.verificarQuestão(perguntas_adi);
                     break;
                 case 1:
-                    perguntas_sub.CriarPergunta();
+                    perguntas_sub.criarPergunta();
                     break;
                 default:
-                    perguntas_mult.CriarPergunta();
+                    perguntas_mult.criarPergunta();
                     break;
             }
-            resposta = JOptionPane.showInputDialog("Proxima?(Responda 1 para continuar)");
+            resposta = JOptionPane.showInputDialog("Proxima? (Responda 1 para continuar)");
             intResposta = Integer.parseInt(resposta);
             JOptionPane.showMessageDialog(null,"" +resposta);
         }
-        JOptionPane.showMessageDialog(null,"Sua pontuacao total é:" + (perguntas_mult.pontos + perguntas_adi.pontos + perguntas_sub.pontos));
-        
     }
     
 }

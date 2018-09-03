@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JogoV2;
+package JOGOV3;
+
 
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
@@ -19,7 +20,7 @@ public class Multiplicacao {
     int respostas;
     
     private void Multiplciacao(){
-      this.pontos = 0;
+      //this.pontos = 0;
     }
     void CriarPergunta(){
        this.operador1 = ThreadLocalRandom.current().nextInt(0,10);
@@ -41,9 +42,10 @@ public class Multiplicacao {
     void ExibirResposta(boolean resultado){
         if (resultado == true){
            JOptionPane.showMessageDialog(null,"Acertô mizeravi!");
-           this.pontos += 1;
+           this.pontos = 1;
        }else{
            JOptionPane.showMessageDialog(null,"Erroooooooooou!");
+           this.pontos = 0;
        }
     }
     
